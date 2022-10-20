@@ -2,7 +2,7 @@ import Styled from "styled-components";
 import SideBar from '../components/SideBar';
 import TitleComponent from '../components/titleComponent';
 import ParagraphComponent from '../components/paragraphComponent';
-import CodeBlock from '../components/codeBlock';
+import CodeComponent from '../components/codeComponent';
 
 
 function ReferencesPage() {
@@ -32,7 +32,7 @@ function ReferencesPage() {
                     <br />
                     <br />
 
-                    <CodeBlock {...headers} />
+                    <CodeComponent {...headers} />
 
                     <br />
                     <br />

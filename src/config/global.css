@@ -5,6 +5,15 @@
 
     /* Definindo o padrão global da fonte */
     font-family: "Fira Sans", sans-serif;
-    font-weight: 400;
     letter-spacing: 1.6px;
+}
+
+h1 {
+    display: ;
+    font-size: none;
+    margin-block-start: none;
+    margin-block-end: none;
+    margin-inline-start: none;
+    margin-inline-end: none;
+    font-weight: none;
 }

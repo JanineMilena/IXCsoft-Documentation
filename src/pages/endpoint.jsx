@@ -2,10 +2,9 @@ import Styled from "styled-components";
 import SideBar from '../components/SideBar';
 import TitleComponent from '../components/titleComponent';
 import ParagraphComponent from '../components/paragraphComponent';
-import CodeBlock from '../components/codeBlock';
+import CodeComponent from '../components/codeComponent';
 
-
-function EndpointPage() {
+function ReferencesPage() {
 
     const headers = {
         'Content-Type': 'application/json',
@@ -20,21 +19,13 @@ function EndpointPage() {
                 <TextsContainer>
 
                     <TitleComponent text="Cliente" />
-                    <ParagraphComponent text="Formulário referente aos dados dos clientes cadastrados no sistema." />
+                    <ParagraphComponent text="Endpoint referente a requisições realizadas sobre a tabela cliente no banco de dados." />
 
+                    <TitleComponent text="Headers" />
 
-                    <TitleComponent text="Listar um cliente" />
-                    <ParagraphComponent text="É possível através da API visualizar o registro de um ou mais clientes do sistema. Esses dados podem ser obtidos através do endpoint  GET /webservice/cliente." />
+                    <CodeComponent {...headers} />
 
-                    <br />
-                    <br />
-
-                    <CodeBlock {...headers} />
-
-                    <br />
-                    <br />
-
-                    <TitleComponent text="Estrutura do body" />
+                    <TitleComponent text="Dados do body" />
 
                 </TextsContainer>
             </ContentContainer >
@@ -57,4 +48,4 @@ const TextsContainer = Styled.div`
     float: right;
 `
 
-export default EndpointPage; 
+export default ReferencesPage; 
