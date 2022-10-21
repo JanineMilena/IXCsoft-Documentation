@@ -1,4 +1,4 @@
-const { webservice } = require("../webservice/clientWebService");
+import webservice from '../clientWebService.js';
 
 class InterfaceService {
     async dataMenu() {
@@ -31,6 +31,7 @@ class InterfaceService {
                 // Insere os submenus abaixo do array menu
                 menus.push(submenus);
             }
+
             // Retorne sucesso
             return ({
                 status: 200,
@@ -42,10 +43,10 @@ class InterfaceService {
         // Retorne erro
         return ({
             status: 500,
-            message: "An error has occurred."
+            message: "An error has occurred.",
         });
     }
 }
 
 // Exportando a classe
-module.exports = { InterfaceService };
+export default InterfaceService;

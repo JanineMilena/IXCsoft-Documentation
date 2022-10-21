@@ -45,6 +45,7 @@ const TextsContainer = Styled.div`
     width: calc(100% - 30%);
     height: 100vh;
     margin-top: 100px;
+    margin-bottom: 100px;
     float: right;
 `
 

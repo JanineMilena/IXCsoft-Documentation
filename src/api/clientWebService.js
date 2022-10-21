@@ -1,7 +1,9 @@
-require("dotenv").config();
-const https = require("https");
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-const AxiosDigestAuth = require("@mhoc/axios-digest-auth").default;
+import https from 'https';
+
+import { AxiosDigestAuth } from '@mhoc/axios-digest-auth';
 
 /**
  * 
@@ -31,8 +33,9 @@ async function webservice(url, method, body) {
 		const response = await digestAuth.request(config);
 		return response.data;
 	} catch (err) {
+		console.log(err.response.data);
 		return err.response.data;
 	}
 }
 
-module.exports = { webservice };
+export default webservice;
