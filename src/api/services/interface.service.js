@@ -2,7 +2,7 @@ import webservice from '../clientWebService.js';
 
 class InterfaceService {
     async dataMenu() {
-        const response = await webservice("/get-menu-by-projeto-e-sub-projeto", "POST", { "id-sub-projeto": "5", "id-projeto": "5" });
+        const response = await webservice("get-menu-by-projeto-e-sub-projeto", "POST", { "id-sub-projeto": "5", "id-projeto": "5" });
         if (response.result) {
             const menus = [];
             for (const index1 in response.result.tree) {
@@ -31,7 +31,7 @@ class InterfaceService {
                 // Insere os submenus abaixo do array menu
                 menus.push(submenus);
             }
-
+            console.log(menus);
             // Retorne sucesso
             return ({
                 status: 200,

@@ -33,7 +33,6 @@ async function webservice(url, method, body) {
 		const response = await digestAuth.request(config);
 		return response.data;
 	} catch (err) {
-		console.log(err.response.data);
 		return err.response.data;
 	}
 }

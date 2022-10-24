@@ -4,13 +4,32 @@ import TitleComponent from '../components/titleComponent';
 import ParagraphComponent from '../components/paragraphComponent';
 import CodeComponent from '../components/codeComponent';
 
+import getData from './index.js'
+import { useEffect, useState } from "react";
+
 function ReferencesPage() {
 
-    const headers = {
+    const headers = [{
         'Content-Type': 'application/json',
         'Authorization': 'Basic <Token Base64>',
         'ixcsoft': 'listar'
-    }
+    }];
+
+    const [teste, setTeste] = useState();
+
+    const response = getData()
+        .then((data) => {
+            console.log('I have data' + JSON.stringify(data));
+        })
+        .then((data) => { setTeste(data) })
+        .catch((err) => {
+            console.error('I have an error:' + err);
+        })
+
+    useEffect(() => {
+        console.log('teste:', JSON.stringify(teste));
+
+    }, [teste]);
 
     return (
         <>
@@ -26,6 +45,10 @@ function ReferencesPage() {
                     <CodeComponent {...headers} />
 
                     <TitleComponent text="Dados do body" />
+
+                    <CodeComponent {...response.data} />
+
+                    {teste?.length > 0 && <p>{teste}</p>}
 
                 </TextsContainer>
             </ContentContainer >
