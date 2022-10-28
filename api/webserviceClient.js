@@ -1,17 +1,8 @@
+import { AxiosDigestAuth } from '@mhoc/axios-digest-auth';
 import * as dotenv from 'dotenv';
-dotenv.config();
-
 import https from 'https';
 
-import { AxiosDigestAuth } from '@mhoc/axios-digest-auth';
-
-/**
- * 
- * @param {string} url 
- * @param {string} method 
- * @param {array} body 
- * @returns 
- */
+dotenv.config();
 
 async function webservice(url, method, body) {
 	try {
